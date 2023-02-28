@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- 集合类型的提取 -->
+    <util:list id="booklist">
+        <value>计算机组成原理</value>
+        <value>数据结构</value>
+        <value>操作系统</value>
+        <value>线性代数</value>
+    </util:list>
+
+    <!-- 使用提取出的集合类型属性进行注入 -->
+    <bean id="book" class="com.Spring.java.collectiontype.Book">
+        <property name="bookList" ref="booklist"></property>
+    </bean>
+</beans>

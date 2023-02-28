@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!-- 开启注解扫描 -->
+    <context:component-scan base-package="com.Spring.java.demo"></context:component-scan>
+
+    <!-- 开启注解扫描 -->
+    <context:component-scan base-package="com.Spring.java.AnnoAOP"></context:component-scan>
+
+    <!-- 开启Aspect生成代理对象 -->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+    <!--
+        use-default-filters="false" 表示现在不使用默认filter，自己配置filter
+        context:include-filter, 用来设置扫描哪些内容
+
+        下面的表示设置只扫描带Controller注解的类
+     -->
+<!--    <context:component-scan base-package="com.Spring.java.demo">-->
+<!--        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+<!--    </context:component-scan>-->
+
+    <!--
+        context:exclude-filter, 用来设置不扫描哪些内容
+        下面的表示设置不扫描带Controller注解的类
+     -->
+<!--    <context:component-scan base-package="com.Spring.java.demo">-->
+<!--        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+<!--    </context:component-scan>-->
+</beans>

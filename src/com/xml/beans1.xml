@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    配置User类对象的创建    -->
+    <bean id = "user" class = "com.Spring.java.User"> </bean>
+
+    <!--    set方法注入属性   -->
+    <bean id = "book" class = "com.Spring.java.Book">
+        <!--
+            使用property标签完成属性注入
+            name：类中的属性名称
+            value：向属性注入的值
+        -->
+        <property name="bookName" value="abc"> </property>
+        <property name="bookAuthor" value="123"> </property>
+    </bean>
+    <!--    使用p属性   -->
+    <!--<bean id = "book" class = "com.Spring.java.Book" p:bookName="九阳神功" p:bookAuthor="无名氏"> </bean>-->
+
+    <!--    有参构造注入属性    -->
+    <bean id = "orders" class = "com.Spring.java.Orders">
+        <constructor-arg name="name" value="电脑"/>
+        <constructor-arg name="address" value="com.Spring.java"/>
+    </bean>
+</beans>

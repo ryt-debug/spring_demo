@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="mybean" class="com.Spring.java.FactoryBean.MyBean">
+    </bean>
+
+    <!--
+        自动装配
+        bean标签属性autowire配置自动装配
+        值
+            byName：根据属性名称注入，bean的类属性名称和被引用类的id值一样
+            byType：根据属性类型注入
+    -->
+    <bean id="student" class="com.Spring.java.autowire.Student" autowire="byName"></bean>
+    <bean id="clazz" class="com.Spring.java.autowire.Clazz"></bean>
+</beans>
